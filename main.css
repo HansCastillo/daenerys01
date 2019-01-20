@@ -1,0 +1,140 @@
+*{padding: 0;margin:0;font-family:Arial, Helvetica, sans-serif}
+
+#contenedor1{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 50px;    
+    color:white;    
+}
+#contenedor1 div{    
+    background: linear-gradient(rgb(39, 55, 128),rgb(0, 0, 0));        
+}
+#contenedor1 div:first-child{    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+#principal{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+#imagen{    
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-image: url(im/daenerys.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+
+}
+#capa1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(rgba(255, 255, 255, 0) 70%,black );
+}
+.descripcion{
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.637);
+    padding:15px;
+    color:white;
+    border-radius: 10px;
+    text-align: justify;
+    position: absolute;
+    bottom:80px;
+    right:-20px;
+    opacity: 0;
+}
+.descripcion-move{    
+    transition: 2s;
+    right:20px;
+    opacity: 1;
+}
+@media screen and (max-width:480px){
+    #imagen{background-position-x:-70px;}
+}
+/*--------------------------------*/
+.cuerpo{
+    padding:10%;
+    padding-left:calc(200px + 10%);
+    display: grid;    
+    grid-template-columns: 100%;
+    grid-auto-rows: 1fr;    
+}
+.cuerpo-01{
+    border: 2px solid rgba(0, 0, 0, 0.589);
+    border-radius: 10px;
+}
+.cuerpo-01>p:first-child{
+    padding:20px;
+    font-style: oblique;
+    text-align: justify;
+}
+.cuerpo-01>p:last-child{
+    padding:20px;    
+}
+@media screen and (max-width:480px){    
+    .cuerpo{
+        padding:5%;
+        padding-left:calc(30px + 5%);
+    }
+}
+/*-------------------------------*/
+.menu{
+    width: 200px;
+    /*height en javascript*/
+    padding:1%;
+    padding-top:5%;
+    background:linear-gradient(rgba(255, 161, 161, 0) 15px ,rgba(0, 0, 0, 0.376),black 60%);
+    display:grid;
+    grid-template-columns: 200px;
+    grid-template-rows:repeat(4,50px);
+    grid-gap:1%;
+    position: fixed;
+    z-index: 5;    
+}
+.menu>div{
+    background: rgb(255, 255, 255);
+    display:flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 3px;
+    color:black;
+    transition: 0.4s;
+}
+
+@media screen and (max-width:480px){
+    .menu{
+        transform: translate(-170px,0px);
+        transition: 1s;        
+    }
+    .menu>div{
+        color:rgba(0, 0, 0, 0);
+    }
+    .menu:hover{
+        transform: translate(0,0);               
+    }
+    .menu:hover div{
+        color:grey;
+    } 
+    .menu>div:hover{
+        color:black;
+    }
+}
+/*-----------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
